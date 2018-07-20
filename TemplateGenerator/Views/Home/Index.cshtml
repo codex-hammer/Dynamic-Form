@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" id="ng-app">
+<head>
+    <title>Custom Filter</title>
+    <link rel="styleSheet" href="~/Scripts/style.css" />
+    
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    @*<script src="~/Scripts/angular.min.js"></script>*@   
+    <script src="~/Scripts/ui-grid.min.js"></script>
+    <link rel="stylesheet" href="~/Content/ui-grid.css" />
+    <script src="~/Scripts/app.js"></script>
+    <script src="~/Scripts/dynamic-forms.js"></script>
+    
+</head>
+<body ng-controller="AppCtrl" ng-cloak="">
+    <div class="container" ng-init="getRequest()">
+        <div ng-repeat="data in stdFormTemplate" ng-if="$index==0" class="form-group">
+            <dynamic-form class = "col-md-12" template="stdFormTemplate" ng-model="stdFormData" style="margin: 20px">
+            </dynamic-form>
+        </div>
+
+    </div>
+    <div>
+        
+        <div id="grid1" ui-grid="{ data: resultresponse }" class="grid"></div>
+    </div>
+
+</body>
+
+</html>
